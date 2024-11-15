@@ -8,9 +8,11 @@ $$
 f(x)=e^{−\frac{x}{5}} \cdot sin(3x) + 0.5  \cdot  sin(x)
 $$
 
+A aproximação foi realizada no intervalo $x \in [0,10]$.
+
 ## Descrição da Implementação
 
-Para implementar o Takagi-Sugeno foi utilizado o código base encontrado em: [Fuzzification](https://github.com/Kingdrasill/Fuzzification). Para este projeto foi utilizado os arquivos `functions.py` e `domain.py`, e foi criado para este projeto o arquivo `tsk_gradient_descent.py` que está o código para fazer o Takagi-Sugeno e a otimização dele por Gradiente Descendentes implementados em código e o uso do Gradiente Descendente BFGS da biblioteca **_Scipy_**.
+Para a implementação do modelo Takagi-Sugeno, utilizou-se como base o código disponibilizado em [Fuzzification](https://github.com/Kingdrasill/Fuzzification). Foram usdados os arquivos `functions.py` e `domain.py`, além da criação do arquivo `tsk_gradient_descent.py`, desenvolvido especificamente para este projeto. Neste arquivo, encontram-se as implementações do modelo Takagi-Sugeno e da otimização de seus parâmetros por Gradiente Descendente. Adicionalmente, utilizou-se também o método minimize usando BFGS da biblioteca **_Scipy_**.
 
 Para os testes para aproximação foi implementado dois tipos de Takagi-Sugeno o de zero ordem e primeira ordem. Foi utilizado apenas uma variável linguística chamada de **_X_**, que pode cobrir o intervalo de $x$ com funções de pertinência do tipo: triangular, trapezoidal, gaussiana, sino, cauchy e laplace. Para avaliar o desempenho do sistema fuzzy foi uso o RMSE (Root Mean Square Error) para comparar com o resultado real e depois é usado o Gradiente Descendente para otimizar os valores dos parâmetros do Takagi-Sugeno.
 
