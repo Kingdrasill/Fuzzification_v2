@@ -14,18 +14,23 @@ A aproximação foi realizada no intervalo $x \in [0,10]$.
 
 Para a implementação do modelo Takagi-Sugeno, utilizou-se como base o código disponibilizado em [Fuzzification](https://github.com/Kingdrasill/Fuzzification). Foram usdados os arquivos `functions.py` e `domain.py`, além da criação do arquivo `tsk_gradient_descent.py`, desenvolvido especificamente para este projeto. Neste arquivo, encontram-se as implementações do modelo Takagi-Sugeno e da otimização de seus parâmetros por Gradiente Descendente. Adicionalmente, utilizou-se também o método minimize usando BFGS da biblioteca **_Scipy_**.
 
-Para os testes para aproximação foi implementado dois tipos de Takagi-Sugeno o de zero ordem e primeira ordem. Foi utilizado apenas uma variável linguística chamada de **_X_**, que pode cobrir o intervalo de $x$ com funções de pertinência do tipo: triangular, trapezoidal, gaussiana, sino, cauchy e laplace. Para avaliar o desempenho do sistema fuzzy foi uso o RMSE (Root Mean Square Error) para comparar com o resultado real e depois é usado o Gradiente Descendente para otimizar os valores dos parâmetros do Takagi-Sugeno.
-
 ### Takagi-Sugeno
 
-Para gerar o resultado aproximado do Takagi-Sugeno foi criada a função `Gerar_TSK` que retorna o resultado da aproximação. A função recebe os seguintes valores:
+O sistema fuzzy foi testado com dois modelos:
 
-- `x`: intervalo de valores de $[0,10]$ que seram calculados
-- `entrada`: instância da classe `Domain` que é domínio da variável de entrada
-- `paramas`: os parâmetros das regras do Takagi-Sugeno
-- `tipo`: defini se as regras tem 1 ou 2 parâmetros em cada
+- **Takagi-Sugeno de ordem zero**
+- **Takagi-Sugeno de primeira ordem**
 
-Para calcular o resultado é pego cada valor do intervalo, calculado os pesos das funções de pertinência para o valor do intervalo, depois é calculado o valor das regras (cada função de pertinência tem sua própia regra) pelo tipo passado, e depois antes de passar para o próximo valor é calculado e salvo o valor de Takagi-Sugeno do valor do intervalo. Isto é feito para todos os valores do intervalo e depois é retornado o resultado.
+Foi utilizada apenas uma variável linguística chamada X, que cobre o intervalo $x$ com funções de pertinência do tipo: triangular, trapezoidal, gaussiana, sino, Cauchy e Laplace. Para avaliar o desempenho do sistema, utilizou-se a métrica RMSE (Root Mean Square Error), que compara os resultados aproximados com os valores reais. Em seguida, aplicou-se o Gradiente Descendente para otimizar os parâmetros das regras do Takagi-Sugeno.
+
+A função `Gerar_TSK` foi implementada para calcular a aproximação do modelo. Ela recebe os seguintes parâmetros:
+
+- `x`: intervalo de valores de $[0,10]$ para os quais será realizada a aproximação.
+- `entrada`: instância da classe `Domain` representando o domínio da variável de entrada.
+- `paramas`: parâmetros das regras do Takagi-Sugeno.
+- `tipo`: define se as regras são de ordem zero ou primeira ordem.
+
+O cálculo é realizado iterativamente para cada valor de $x$, pegando os pesos das funções de pertinência, ponderando os valores das regras, e computando o resultado final da aproximação.
 
 ```
 # Gera o resultado do método de Takagi-Sugeno de 0 ordem ou 1 ordem
@@ -59,13 +64,13 @@ def Gerar_TSK(x, entrada, params, tipo):
 
 ### RMSE e Gradiente Descendente
 
-Para poder otimizar os parâmetros das regras do Takaagi-Sugeno foi utilizado o método Gradiente Descendente. O **Gradiente Descendente** é um algoritmo de otimização usado para minimizar uma função, a ideia principal é ajustar iterativamente os parâmetros de um modelo na direção oposta ao gradiente (ou seja, a derivada) da função de erro em relação aos parâmetros, para reduzir o valor dessa função de erro. Foram usados os gradientes descentes:
+A otimização dos parâmetros foi realizada utilizando o Gradiente Descendente, que minimiza iterativamente o erro entre a função real e a aproximada. Foram implementadas as seguintes variações:
 
-- **Gradiente Descendete com Momento**: é uma variação do algoritmo de gradiente descendente que visa acelerar a convergência e reduzir as oscilações nas atualizações dos parâmetros. Ele adiciona um termo de "momento" à atualização, que é uma média ponderada das atualizações passadas.
-- **Gradiente Descendete com Adam**: é uma técnica de otimização que combina as vantagens do Gradiente Descendente com Momento e do Gradiente Descendente com Taxa de Aprendizado Adaptativa. Ele ajusta a taxa de aprendizado para cada parâmetro com base nas primeiras e segundas estimativas dos momentos (média e variância) dos gradientes.
-- **Gradiente Descendete com RMSprop**: é um algoritmo de otimização que adapta a taxa de aprendizado para cada parâmetro com base na média dos quadrados dos gradientes. Ele foi projetado para superar problemas de gradiente muito grande ou muito pequeno em modelos de aprendizado profundo, proporcionando uma atualização mais estável e eficiente.
-- **Minimize BFGS**: é um método iterativo de otimização usado para minimizar uma função em várias variáveis. Ele pertence à classe de métodos de quase-Newton, que visam encontrar o mínimo de uma função sem precisar calcular a inversa da matriz Hessiana (a matriz das segundas derivadas) explicitamente, o que o torna mais eficiente do que os métodos de Newton. Este não foi implementado em código, mas utilizado da biblioteca **_Scipy_** usando o método de otimização dela `minimize`.
+- **Gradiente Descendete com Momento**: Acelera a convergência e reduz oscilações ao incorporar o histórico das atualizações anteriores.
+- **Gradiente Descendete com Adam**: Combina momento e adaptação da taxa de aprendizado para cada parâmetro, ajustando-se dinamicamente às características do gradiente.
+- **Gradiente Descendete com RMSprop**: Adapta a taxa de aprendizado com base na média dos quadrados dos gradientes, proporcionando atualizações mais estáveis.
+- **Minimize BFGS**: Método quasi-Newton que minimiza uma função em várias variáveis. Utilizado diretamente da biblioteca Scipy.
 
-Para todos os gradientes descendetes implementados foi utilizado como função de erro a ser reduzida o valor RMSE da função aproximada com o função real. Além disso todos métodos tinham no máximo 5000 iterações para convergir, outra maneira de convergir é a taxa de tolerância do erro ser menor do que 0.00001.
+A métrica de erro utilizada em todas as abordagens foi o RMSE, com um limite de tolerância de 10^{-5}$$ ou, no máximo, $5000$ iterações para convergência.
 
 ## Descrição dos Testes
