@@ -17,6 +17,8 @@ Para gerar o resultado aproximado do Takagi-Sugeno foi criada a função `Gerar_
 - `paramas`: os parâmetros das regras do Takagi-Sugeno
 - `tipo`: defini se as regras tem 1 ou 2 parâmetros em cada
 
+Para calcular o resultado é pego cada valor do intervalo, calculado os pesos das funções de pertinência para o valor do intervalo, depois é calculado o valor das regras (cada função de pertinência tem sua própia regra) pelo tipo passado, e depois antes de passar para o próximo valor é calculado e salvo o valor de Takagi-Sugeno do valor do intervalo. Isto é feito para todos os valores do intervalo e depois é retornado o resultado.
+
 ```
 # Gera o resultado do método de Takagi-Sugeno de 0 ordem ou 1 ordem
 def Gerar_TSK(x, entrada, params, tipo):
