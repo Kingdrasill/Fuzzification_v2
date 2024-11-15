@@ -71,6 +71,6 @@ A otimização dos parâmetros foi realizada utilizando o Gradiente Descendente,
 - **Gradiente Descendete com RMSprop**: Adapta a taxa de aprendizado com base na média dos quadrados dos gradientes, proporcionando atualizações mais estáveis.
 - **Minimize BFGS**: Método quasi-Newton que minimiza uma função em várias variáveis. Utilizado diretamente da biblioteca Scipy.
 
-A métrica de erro utilizada em todas as abordagens foi o RMSE, com um limite de tolerância de 10^{-5}$$ ou, no máximo, $5000$ iterações para convergência.
+A métrica de erro utilizada em todas as abordagens foi o RMSE, com um limite de tolerância de $10^{-5}$ ou, no máximo, $5000$ iterações para convergência.
 
 ## Descrição dos Testes
