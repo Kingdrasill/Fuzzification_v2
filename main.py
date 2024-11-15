@@ -60,6 +60,7 @@ fx = []
 for value in x:
     fx.append(math.exp(- value / 5) * math.sin(3 * value) + 0.5 * math.sin(value))
 
+file = open('data/saida.txt', 'w')
 # Gera entradas de funções do tipo: triangular, trapezoidal, gaussiana, sino, cauchy, laplace
 for t in ['TR', 'TP', 'GS', 'SN', 'CC', 'LP']:
     # Quantidade de funções de pertinência: 4 a 8
@@ -83,7 +84,7 @@ for t in ['TR', 'TP', 'GS', 'SN', 'CC', 'LP']:
             case 'LP':
                 entrada = Gerar_Entrada_LP(inf, sup, qtd)
                 filename = 'domain_lp_{}'.format(qtd)
-        
+        file.write(filename + ':\n')
         for ordem in [0, 1]:
             aproxs = []
             names = []
@@ -91,27 +92,37 @@ for t in ['TR', 'TP', 'GS', 'SN', 'CC', 'LP']:
 
             params, erro = Gradient_Descent_Momentum(x, fx, entrada, ordem, max_iter=max_iter)
             aprox = Gerar_TSK(x, entrada, params, ordem)
+            rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()
+            file.write(f'Aprox GD Momentum {ordem} ordem: {rmse:.5f}\n')
             aproxs.append(aprox)
             names.append(f'Aprox GD Momentum')
             erros.append(erro)
 
             params, erro = Gradient_Descent_Adam(x, fx, entrada, ordem, max_iter=max_iter)
             aprox = Gerar_TSK(x, entrada, params, ordem)
+            rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()
+            file.write(f'Aprox GD Adam {ordem} ordem: {rmse:.5f}\n')
             aproxs.append(aprox)
             names.append(f'Aprox GD Adam')
             erros.append(erro)
 
             params, erro = Gradient_Descent_RMSprop(x, fx, entrada, ordem, max_iter=max_iter)
             aprox = Gerar_TSK(x, entrada, params, ordem)
+            rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()
+            file.write(f'Aprox GD RMSprop {ordem} ordem: {rmse:.5f}\n')
             aproxs.append(aprox)
             names.append(f'Aprox GD RMSprop')
             erros.append(erro)
 
             aprox, erro = Gerar_Resultado_Aproximado(x, fx, entrada, 'BFGS', ordem, max_iter=max_iter)
+            rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()
+            file.write(f'Aprox Minimize BFGS {ordem} ordem: {rmse:.5f}\n')
             aproxs.append(aprox)
             names.append(f'Aprox Minimize BFGS')
             erros.append(erro)
 
             Gerar_Graficos(x, fx, entrada, aproxs, names, erros, f'imgs/{ordem}-ordem/' + filename + '.png')
+        file.write('\n')
+file.close()
 
-print("Os gráficos estão na pasta imgs")
+print("Os gráficos e a saída estão na pasta imgs")

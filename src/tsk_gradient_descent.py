@@ -98,7 +98,7 @@ def Gradient_Descent_Momentum(x, fx, entrada, tipo, learning_rate=1e-4, max_iter
 
     for iteration in range(max_iter):
         aprox = Gerar_TSK(x, entrada, params, tipo)  # Gera as aproximações do modelo
-        rmse = np.sqrt(np.mean((np.array(aprox) - np.array(fx))**2))  # Calcula o erro RMSE
+        rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()  # Calcula o erro RMSE
         errors.append(rmse)  # Armazena o erro da iteração atual
 
         if iteration > 0 and abs(errors[-1] - errors[-2]) < tol:  # Critério de convergência
@@ -144,7 +144,7 @@ def Gradient_Descent_Adam(x, fx, entrada, tipo, learning_rate=1e-3, max_iter=100
 
     for iteration in range(max_iter):
         aprox = Gerar_TSK(x, entrada, params, tipo)  # Gera as aproximações do modelo
-        rmse = np.sqrt(np.mean((np.array(aprox) - np.array(fx))**2))  # Calcula o erro RMSE
+        rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()  # Calcula o erro RMSE
         errors.append(rmse)
 
         if iteration > 0 and abs(errors[-1] - errors[-2]) < tol:  # Critério de convergência
@@ -192,7 +192,7 @@ def Gradient_Descent_RMSprop(x, fx, entrada, tipo, learning_rate=1e-3, max_iter=
 
     for iteration in range(max_iter):
         aprox = Gerar_TSK(x, entrada, params, tipo)  # Gera as aproximações do modelo
-        rmse = np.sqrt(np.mean((np.array(aprox) - np.array(fx))**2))  # Calcula o erro RMSE
+        rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()  # Calcula o erro RMSE
         errors.append(rmse)
 
         if iteration > 0 and abs(errors[-1] - errors[-2]) < tol:  # Critério de convergência
