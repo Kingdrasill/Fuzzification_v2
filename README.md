@@ -2,7 +2,11 @@
 
 ## Gabriel Teixeira Júlio
 
-O objetivo deste projeto foi a implementação de um sistema fuzzy de Takagi-Sugeno de ordem zero ou primeira ordem para aproximar a seguinte função não linear: $f(x)=e^{-\frac{x}{5}}\cdot sin(3x)+0.5\cdot sin(x)$. A aproximação está dentro do intervalo $x\in [0,10]$.
+Este projeto teve como objetivo implementar um sistema fuzzy de Takagi-Sugeno de ordem zero e primeira ordem para aproximar a seguinte função não linear:
+
+$$
+f(x)=e^{−\frac{x}{5}} \cdot sin(3x) + 0.5  \cdot  sin(x)
+$$
 
 ## Descrição da Implementação
 
