@@ -60,6 +60,6 @@ Para poder otimizar os parâmetros das regras do Takaagi-Sugeno foi utilizado o 
 - **Gradiente Descendete com RMSprop**: é um algoritmo de otimização que adapta a taxa de aprendizado para cada parâmetro com base na média dos quadrados dos gradientes. Ele foi projetado para superar problemas de gradiente muito grande ou muito pequeno em modelos de aprendizado profundo, proporcionando uma atualização mais estável e eficiente.
 - **Minimize BFGS**: é um método iterativo de otimização usado para minimizar uma função em várias variáveis. Ele pertence à classe de métodos de quase-Newton, que visam encontrar o mínimo de uma função sem precisar calcular a inversa da matriz Hessiana (a matriz das segundas derivadas) explicitamente, o que o torna mais eficiente do que os métodos de Newton. Este não foi implementado em código, mas utilizado da biblioteca **_Scipy_** usando o método de otimização dela `minimize`.
 
-Para todos os gradientes descendetes implementados foi utilizado como função de erro a ser reduzida o valor RMSE da função aproximada com o função real. Além disso todos métodos tinham no máximo 5000 iterações para convergir, outra maneira de convergir é a taxa de tolerância do erro ser menor do que 0.0
+Para todos os gradientes descendetes implementados foi utilizado como função de erro a ser reduzida o valor RMSE da função aproximada com o função real. Além disso todos métodos tinham no máximo 5000 iterações para convergir, outra maneira de convergir é a taxa de tolerância do erro ser menor do que 0.00001.
 
 ## Descrição dos Testes
