@@ -74,3 +74,13 @@ A otimização dos parâmetros foi realizada utilizando o Gradiente Descendente,
 A métrica de erro utilizada em todas as abordagens foi o RMSE, com um limite de tolerância de $10^{-5}$ ou, no máximo, $5000$ iterações para convergência.
 
 ## Descrição dos Testes
+
+Os testes tiveram como objetivo avaliar a eficiência das diferentes funções de pertinência, dos dois modelos implementados (ordem zero e primeira ordem) e dos métodos de otimização aplicados. Os resultados foram analisados por meio de gráficos que exibem a entrada, os valores aproximados e a evolução do erro ao longo das iterações.
+
+### Entrada com 4 Funções de Pertinência Triangular
+
+#### Takagi-Sugeno ordem zero
+
+<img src='data/0-ordem/domain_tr_4.png'>
+
+#### Takagi-Sugeno primeira ordem
