@@ -1,18 +1,16 @@
 from src.tsk_gradient_descent import *
 from matplotlib.gridspec import GridSpec
 
-inf, sup = 0, 10
-x = np.linspace(inf, sup, 200)
-fx = []
-for value in x:
-    fx.append(math.exp(- value / 5) * math.sin(3 * value) + 0.5 * math.sin(value))
-
+# Método para gerar os gráicos
 def Gerar_Graficos(x, fx, entrada, aproxs, names, erros, filename):
+    # Gera 3 gráficos na mesma linha
     fig = plt.figure(figsize=(12, 5))
     gs = GridSpec(1, 3, figure=fig)
     ax1 = fig.add_subplot(gs[0,0])
     ax2 = fig.add_subplot(gs[0,1])
     ax3 = fig.add_subplot(gs[0,2])
+
+    # Primeiro gráfico: Entrada do sistema fuzzy
     for f in entrada.funcs:
         y = []
         match f['tipo']:
@@ -30,17 +28,21 @@ def Gerar_Graficos(x, fx, entrada, aproxs, names, erros, filename):
     ax1.legend()
     ax1.grid(True)
     
+    colors = ['red', 'orange', 'green', 'purple']
+
+    # Segundo gráfico: Resultado Real X Aproximado
     ax2.plot(x, fx, label='Real')
-    for aprox, name in zip(aproxs, names):
-        ax2.plot(x, aprox, label=name)
+    for aprox, name, color in zip(aproxs, names, colors):
+        ax2.plot(x, aprox, label=name, color=color)
     ax2.set_title('Resposta Real X Aproximação')
     ax2.legend()
     ax2.grid(True)
 
-    for erro, name in zip(erros, names):
-        ax3.plot(erro, label=name)
-    for erro, name in zip(erros, names):
-        ax3.scatter(len(erro) - 1, erro[-1], marker='x')
+    # Terceiro gráfico: Evolução do RMSE
+    for erro, name, color in zip(erros, names, colors):
+        ax3.plot(erro, label=name, color=color)
+    for erro, name, color in zip(erros, names, colors):
+        ax3.scatter(len(erro) - 1, erro[-1], color=color, marker='x')
     ax3.set_title('Evolução do RMSE')
     ax3.legend()
     ax2.grid(True)
@@ -48,11 +50,20 @@ def Gerar_Graficos(x, fx, entrada, aproxs, names, erros, filename):
     plt.savefig(filename)
     plt.close()
 
+max_iter = 5000
+# Limites do sistema fuzzy
+inf, sup = 0, 10
+# Intervalo de valores
+x = np.linspace(inf, sup, 300)
+# Gera o resultado real
+fx = []
+for value in x:
+    fx.append(math.exp(- value / 5) * math.sin(3 * value) + 0.5 * math.sin(value))
+
+# Gera entradas de funções do tipo: triangular, trapezoidal, gaussiana, sino, cauchy, laplace
 for t in ['TR', 'TP', 'GS', 'SN', 'CC', 'LP']:
-    for qtd in range(4, 8):
-        aproxs = []
-        names = []
-        erros = []
+    # Quantidade de funções de pertinência: 4 a 8
+    for qtd in range(4, 9):
         match t:
             case 'TR':
                 entrada = Gerar_Entrada_TR(inf, sup, qtd)
@@ -73,10 +84,34 @@ for t in ['TR', 'TP', 'GS', 'SN', 'CC', 'LP']:
                 entrada = Gerar_Entrada_LP(inf, sup, qtd)
                 filename = 'domain_lp_{}'.format(qtd)
         
-        for m in ['CG', 'BFGS']:
-            for o in [0, 1]:
-                aprox, erro = Gerar_Resultado_Aproximado(x, fx, entrada, m, o)
-                aproxs.append(aprox)
-                names.append(f'Aprox {m} {o} ordem')
-                erros.append(erro)
-        Gerar_Graficos(x, fx, entrada, aproxs, names, erros, 'data/' + filename + '.png')
+        for ordem in [0, 1]:
+            aproxs = []
+            names = []
+            erros = []
+
+            params, erro = Gradient_Descent_Momentum(x, fx, entrada, ordem, max_iter=max_iter)
+            aprox = Gerar_TSK(x, entrada, params, ordem)
+            aproxs.append(aprox)
+            names.append(f'Aprox GD Momentum')
+            erros.append(erro)
+
+            params, erro = Gradient_Descent_Adam(x, fx, entrada, ordem, max_iter=max_iter)
+            aprox = Gerar_TSK(x, entrada, params, ordem)
+            aproxs.append(aprox)
+            names.append(f'Aprox GD Adam')
+            erros.append(erro)
+
+            params, erro = Gradient_Descent_RMSprop(x, fx, entrada, ordem, max_iter=max_iter)
+            aprox = Gerar_TSK(x, entrada, params, ordem)
+            aproxs.append(aprox)
+            names.append(f'Aprox GD RMSprop')
+            erros.append(erro)
+
+            aprox, erro = Gerar_Resultado_Aproximado(x, fx, entrada, 'BFGS', ordem, max_iter=max_iter)
+            aproxs.append(aprox)
+            names.append(f'Aprox Minimize BFGS')
+            erros.append(erro)
+
+            Gerar_Graficos(x, fx, entrada, aproxs, names, erros, f'imgs/{ordem}-ordem/' + filename + '.png')
+
+print("Os gráficos estão na pasta imgs")
