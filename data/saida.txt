@@ -1,298 +1,178 @@
 domain_tr_4:
-Aprox GD Momentum 0 ordem: 0.38138
-Aprox GD Adam 0 ordem: 0.38398
-Aprox GD RMSprop 0 ordem: 0.39221
-Aprox Minimize BFGS 0 ordem: 0.36159
 Aprox GD Momentum 1 ordem: 0.26487
 Aprox GD Adam 1 ordem: 0.26148
 Aprox GD RMSprop 1 ordem: 0.37095
 Aprox Minimize BFGS 1 ordem: 0.23390
 
 domain_tr_5:
-Aprox GD Momentum 0 ordem: 0.26235
-Aprox GD Adam 0 ordem: 0.26497
-Aprox GD RMSprop 0 ordem: 0.26535
-Aprox Minimize BFGS 0 ordem: 0.26078
 Aprox GD Momentum 1 ordem: 0.26679
 Aprox GD Adam 1 ordem: 0.23720
 Aprox GD RMSprop 1 ordem: 0.25247
 Aprox Minimize BFGS 1 ordem: 0.20746
 
 domain_tr_6:
-Aprox GD Momentum 0 ordem: 0.24581
-Aprox GD Adam 0 ordem: 0.24823
-Aprox GD RMSprop 0 ordem: 0.24671
-Aprox Minimize BFGS 0 ordem: 0.24202
 Aprox GD Momentum 1 ordem: 0.19095
 Aprox GD Adam 1 ordem: 0.20388
 Aprox GD RMSprop 1 ordem: 0.26778
 Aprox Minimize BFGS 1 ordem: 0.13174
 
 domain_tr_7:
-Aprox GD Momentum 0 ordem: 0.26156
-Aprox GD Adam 0 ordem: 0.26348
-Aprox GD RMSprop 0 ordem: 0.26147
-Aprox Minimize BFGS 0 ordem: 0.25950
 Aprox GD Momentum 1 ordem: 0.25756
 Aprox GD Adam 1 ordem: 0.25620
 Aprox GD RMSprop 1 ordem: 0.28012
 Aprox Minimize BFGS 1 ordem: 0.14911
 
 domain_tr_8:
-Aprox GD Momentum 0 ordem: 0.25468
-Aprox GD Adam 0 ordem: 0.25958
-Aprox GD RMSprop 0 ordem: 0.25449
-Aprox Minimize BFGS 0 ordem: 0.24770
 Aprox GD Momentum 1 ordem: 0.26136
 Aprox GD Adam 1 ordem: 0.25099
 Aprox GD RMSprop 1 ordem: 0.19335
 Aprox Minimize BFGS 1 ordem: 0.07042
 
 domain_tp_4:
-Aprox GD Momentum 0 ordem: 0.32333
-Aprox GD Adam 0 ordem: 0.32617
-Aprox GD RMSprop 0 ordem: 0.33707
-Aprox Minimize BFGS 0 ordem: 0.31155
 Aprox GD Momentum 1 ordem: 0.31290
 Aprox GD Adam 1 ordem: 0.27123
 Aprox GD RMSprop 1 ordem: 0.25551
 Aprox Minimize BFGS 1 ordem: 0.24358
 
 domain_tp_5:
-Aprox GD Momentum 0 ordem: 0.26978
-Aprox GD Adam 0 ordem: 0.27151
-Aprox GD RMSprop 0 ordem: 0.27303
-Aprox Minimize BFGS 0 ordem: 0.26926
 Aprox GD Momentum 1 ordem: 0.30588
 Aprox GD Adam 1 ordem: 0.27885
 Aprox GD RMSprop 1 ordem: 0.28034
 Aprox Minimize BFGS 1 ordem: 0.19900
 
 domain_tp_6:
-Aprox GD Momentum 0 ordem: 0.27010
-Aprox GD Adam 0 ordem: 0.27181
-Aprox GD RMSprop 0 ordem: 0.27019
-Aprox Minimize BFGS 0 ordem: 0.26892
 Aprox GD Momentum 1 ordem: 0.26745
 Aprox GD Adam 1 ordem: 0.25029
 Aprox GD RMSprop 1 ordem: 0.28144
 Aprox Minimize BFGS 1 ordem: 0.15084
 
 domain_tp_7:
-Aprox GD Momentum 0 ordem: 0.25953
-Aprox GD Adam 0 ordem: 0.26147
-Aprox GD RMSprop 0 ordem: 0.26045
-Aprox Minimize BFGS 0 ordem: 0.25773
 Aprox GD Momentum 1 ordem: 0.24793
 Aprox GD Adam 1 ordem: 0.26037
 Aprox GD RMSprop 1 ordem: 0.27192
 Aprox Minimize BFGS 1 ordem: 0.17113
 
 domain_tp_8:
-Aprox GD Momentum 0 ordem: 0.26102
-Aprox GD Adam 0 ordem: 0.26334
-Aprox GD RMSprop 0 ordem: 0.25892
-Aprox Minimize BFGS 0 ordem: 0.25085
 Aprox GD Momentum 1 ordem: 0.26593
 Aprox GD Adam 1 ordem: 0.25233
 Aprox GD RMSprop 1 ordem: 0.27209
 Aprox Minimize BFGS 1 ordem: 0.11885
 
 domain_gs_4:
-Aprox GD Momentum 0 ordem: 0.36491
-Aprox GD Adam 0 ordem: 0.36773
-Aprox GD RMSprop 0 ordem: 0.40894
-Aprox Minimize BFGS 0 ordem: 0.34364
 Aprox GD Momentum 1 ordem: 0.32895
 Aprox GD Adam 1 ordem: 0.25829
 Aprox GD RMSprop 1 ordem: 0.25185
 Aprox Minimize BFGS 1 ordem: 0.24259
 
 domain_gs_5:
-Aprox GD Momentum 0 ordem: 0.26115
-Aprox GD Adam 0 ordem: 0.26232
-Aprox GD RMSprop 0 ordem: 0.26187
-Aprox Minimize BFGS 0 ordem: 0.26011
 Aprox GD Momentum 1 ordem: 0.29777
 Aprox GD Adam 1 ordem: 0.26568
 Aprox GD RMSprop 1 ordem: 0.27910
 Aprox Minimize BFGS 1 ordem: 0.25396
 
 domain_gs_6:
-Aprox GD Momentum 0 ordem: 0.26276
-Aprox GD Adam 0 ordem: 0.26769
-Aprox GD RMSprop 0 ordem: 0.28443
-Aprox Minimize BFGS 0 ordem: 0.25087
 Aprox GD Momentum 1 ordem: 0.25478
 Aprox GD Adam 1 ordem: 0.25548
 Aprox GD RMSprop 1 ordem: 0.26098
 Aprox Minimize BFGS 1 ordem: 0.24762
 
 domain_gs_7:
-Aprox GD Momentum 0 ordem: 0.25085
-Aprox GD Adam 0 ordem: 0.25628
-Aprox GD RMSprop 0 ordem: 0.25289
-Aprox Minimize BFGS 0 ordem: 0.24402
 Aprox GD Momentum 1 ordem: 0.25294
 Aprox GD Adam 1 ordem: 0.25013
 Aprox GD RMSprop 1 ordem: 0.25297
 Aprox Minimize BFGS 1 ordem: 0.22562
 
 domain_gs_8:
-Aprox GD Momentum 0 ordem: 0.25451
-Aprox GD Adam 0 ordem: 0.25433
-Aprox GD RMSprop 0 ordem: 0.25111
-Aprox Minimize BFGS 0 ordem: 0.24538
 Aprox GD Momentum 1 ordem: 0.25063
 Aprox GD Adam 1 ordem: 0.25470
 Aprox GD RMSprop 1 ordem: 0.26343
 Aprox Minimize BFGS 1 ordem: 0.07988
 
 domain_sn_4:
-Aprox GD Momentum 0 ordem: 0.34604
-Aprox GD Adam 0 ordem: 0.34826
-Aprox GD RMSprop 0 ordem: 0.35291
-Aprox Minimize BFGS 0 ordem: 0.33150
 Aprox GD Momentum 1 ordem: 0.33094
 Aprox GD Adam 1 ordem: 0.26846
 Aprox GD RMSprop 1 ordem: 0.35008
 Aprox Minimize BFGS 1 ordem: 0.25264
 
 domain_sn_5:
-Aprox GD Momentum 0 ordem: 0.27920
-Aprox GD Adam 0 ordem: 0.28092
-Aprox GD RMSprop 0 ordem: 0.28097
-Aprox Minimize BFGS 0 ordem: 0.27873
 Aprox GD Momentum 1 ordem: 0.27796
 Aprox GD Adam 1 ordem: 0.22236
 Aprox GD RMSprop 1 ordem: 0.29026
 Aprox Minimize BFGS 1 ordem: 0.17571
 
 domain_sn_6:
-Aprox GD Momentum 0 ordem: 0.25871
-Aprox GD Adam 0 ordem: 0.26019
-Aprox GD RMSprop 0 ordem: 0.26136
-Aprox Minimize BFGS 0 ordem: 0.25699
 Aprox GD Momentum 1 ordem: 0.26177
 Aprox GD Adam 1 ordem: 0.15904
 Aprox GD RMSprop 1 ordem: 0.28113
 Aprox Minimize BFGS 1 ordem: 0.09157
 
 domain_sn_7:
-Aprox GD Momentum 0 ordem: 0.27029
-Aprox GD Adam 0 ordem: 0.27336
-Aprox GD RMSprop 0 ordem: 0.27096
-Aprox Minimize BFGS 0 ordem: 0.26745
 Aprox GD Momentum 1 ordem: 0.25650
 Aprox GD Adam 1 ordem: 0.12559
 Aprox GD RMSprop 1 ordem: 0.22694
 Aprox Minimize BFGS 1 ordem: 0.03115
 
 domain_sn_8:
-Aprox GD Momentum 0 ordem: 0.22446
-Aprox GD Adam 0 ordem: 0.22785
-Aprox GD RMSprop 0 ordem: 0.22540
-Aprox Minimize BFGS 0 ordem: 0.21696
 Aprox GD Momentum 1 ordem: 0.11956
 Aprox GD Adam 1 ordem: 0.11616
 Aprox GD RMSprop 1 ordem: 0.25774
 Aprox Minimize BFGS 1 ordem: 0.01470
 
 domain_cc_4:
-Aprox GD Momentum 0 ordem: 0.35752
-Aprox GD Adam 0 ordem: 0.36042
-Aprox GD RMSprop 0 ordem: 0.35750
-Aprox Minimize BFGS 0 ordem: 0.33356
 Aprox GD Momentum 1 ordem: 0.32063
 Aprox GD Adam 1 ordem: 0.26677
 Aprox GD RMSprop 1 ordem: 0.25787
 Aprox Minimize BFGS 1 ordem: 0.24481
 
 domain_cc_5:
-Aprox GD Momentum 0 ordem: 0.26168
-Aprox GD Adam 0 ordem: 0.26383
-Aprox GD RMSprop 0 ordem: 0.26240
-Aprox Minimize BFGS 0 ordem: 0.26081
 Aprox GD Momentum 1 ordem: 0.26489
 Aprox GD Adam 1 ordem: 0.25868
 Aprox GD RMSprop 1 ordem: 0.28451
 Aprox Minimize BFGS 1 ordem: 0.22474
 
 domain_cc_6:
-Aprox GD Momentum 0 ordem: 0.25821
-Aprox GD Adam 0 ordem: 0.26045
-Aprox GD RMSprop 0 ordem: 0.25909
-Aprox Minimize BFGS 0 ordem: 0.25687
 Aprox GD Momentum 1 ordem: 0.15557
 Aprox GD Adam 1 ordem: 0.15119
 Aprox GD RMSprop 1 ordem: 0.22919
 Aprox Minimize BFGS 1 ordem: 0.03074
 
 domain_cc_7:
-Aprox GD Momentum 0 ordem: 0.26132
-Aprox GD Adam 0 ordem: 0.26548
-Aprox GD RMSprop 0 ordem: 0.26232
-Aprox Minimize BFGS 0 ordem: 0.25746
 Aprox GD Momentum 1 ordem: 0.25624
 Aprox GD Adam 1 ordem: 0.12447
 Aprox GD RMSprop 1 ordem: 0.27047
 Aprox Minimize BFGS 1 ordem: 0.00650
 
 domain_cc_8:
-Aprox GD Momentum 0 ordem: 0.21691
-Aprox GD Adam 0 ordem: 0.22061
-Aprox GD RMSprop 0 ordem: 0.22199
-Aprox Minimize BFGS 0 ordem: 0.21052
 Aprox GD Momentum 1 ordem: 0.25751
 Aprox GD Adam 1 ordem: 0.12572
 Aprox GD RMSprop 1 ordem: 0.25052
 Aprox Minimize BFGS 1 ordem: 0.00493
 
 domain_lp_4:
-Aprox GD Momentum 0 ordem: 0.35477
-Aprox GD Adam 0 ordem: 0.35743
-Aprox GD RMSprop 0 ordem: 0.35592
-Aprox Minimize BFGS 0 ordem: 0.33296
 Aprox GD Momentum 1 ordem: 0.31769
 Aprox GD Adam 1 ordem: 0.26821
 Aprox GD RMSprop 1 ordem: 0.35039
 Aprox Minimize BFGS 1 ordem: 0.25132
 
 domain_lp_5:
-Aprox GD Momentum 0 ordem: 0.25055
-Aprox GD Adam 0 ordem: 0.25276
-Aprox GD RMSprop 0 ordem: 0.25106
-Aprox Minimize BFGS 0 ordem: 0.24941
 Aprox GD Momentum 1 ordem: 0.25473
 Aprox GD Adam 1 ordem: 0.25181
 Aprox GD RMSprop 1 ordem: 0.26279
 Aprox Minimize BFGS 1 ordem: 0.20976
 
 domain_lp_6:
-Aprox GD Momentum 0 ordem: 0.25882
-Aprox GD Adam 0 ordem: 0.26059
-Aprox GD RMSprop 0 ordem: 0.25860
-Aprox Minimize BFGS 0 ordem: 0.25766
 Aprox GD Momentum 1 ordem: 0.22193
 Aprox GD Adam 1 ordem: 0.19049
 Aprox GD RMSprop 1 ordem: 0.25237
 Aprox Minimize BFGS 1 ordem: 0.03412
 
 domain_lp_7:
-Aprox GD Momentum 0 ordem: 0.26033
-Aprox GD Adam 0 ordem: 0.26353
-Aprox GD RMSprop 0 ordem: 0.26304
-Aprox Minimize BFGS 0 ordem: 0.25527
 Aprox GD Momentum 1 ordem: 0.08517
 Aprox GD Adam 1 ordem: 0.07826
 Aprox GD RMSprop 1 ordem: 0.04496
 Aprox Minimize BFGS 1 ordem: 0.03768
 
 domain_lp_8:
-Aprox GD Momentum 0 ordem: 0.21655
-Aprox GD Adam 0 ordem: 0.21995
-Aprox GD RMSprop 0 ordem: 0.22421
-Aprox Minimize BFGS 0 ordem: 0.21029
 Aprox GD Momentum 1 ordem: 0.23307
 Aprox GD Adam 1 ordem: 0.09940
 Aprox GD RMSprop 1 ordem: 0.25177

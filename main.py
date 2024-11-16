@@ -85,43 +85,44 @@ for t in ['TR', 'TP', 'GS', 'SN', 'CC', 'LP']:
                 entrada = Gerar_Entrada_LP(inf, sup, qtd)
                 filename = 'domain_lp_{}'.format(qtd)
         file.write(filename + ':\n')
-        for ordem in [0, 1]:
-            aproxs = []
-            names = []
-            erros = []
 
-            params, erro = Gradient_Descent_Momentum(x, fx, entrada, ordem, max_iter=max_iter)
-            aprox = Gerar_TSK(x, entrada, params, ordem)
-            rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()
-            file.write(f'Aprox GD Momentum {ordem} ordem: {rmse:.5f}\n')
-            aproxs.append(aprox)
-            names.append(f'Aprox GD Momentum')
-            erros.append(erro)
+        aproxs = []
+        names = []
+        erros = []
 
-            params, erro = Gradient_Descent_Adam(x, fx, entrada, ordem, max_iter=max_iter)
-            aprox = Gerar_TSK(x, entrada, params, ordem)
-            rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()
-            file.write(f'Aprox GD Adam {ordem} ordem: {rmse:.5f}\n')
-            aproxs.append(aprox)
-            names.append(f'Aprox GD Adam')
-            erros.append(erro)
+        params, erro = Gradient_Descent_Momentum(x, fx, entrada, 1, max_iter=max_iter)
+        aprox = Gerar_TSK(x, entrada, params, 1)
+        rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()
+        file.write(f'Aprox GD Momentum 1 ordem: {rmse:.5f}\n')
+        aproxs.append(aprox)
+        names.append(f'Aprox GD Momentum')
+        erros.append(erro)
 
-            params, erro = Gradient_Descent_RMSprop(x, fx, entrada, ordem, max_iter=max_iter)
-            aprox = Gerar_TSK(x, entrada, params, ordem)
-            rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()
-            file.write(f'Aprox GD RMSprop {ordem} ordem: {rmse:.5f}\n')
-            aproxs.append(aprox)
-            names.append(f'Aprox GD RMSprop')
-            erros.append(erro)
+        params, erro = Gradient_Descent_Adam(x, fx, entrada, 1, max_iter=max_iter)
+        aprox = Gerar_TSK(x, entrada, params, 1)
+        rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()
+        file.write(f'Aprox GD Adam 1 ordem: {rmse:.5f}\n')
+        aproxs.append(aprox)
+        names.append(f'Aprox GD Adam')
+        erros.append(erro)
 
-            aprox, erro = Gerar_Resultado_Aproximado(x, fx, entrada, 'BFGS', ordem, max_iter=max_iter)
-            rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()
-            file.write(f'Aprox Minimize BFGS {ordem} ordem: {rmse:.5f}\n')
-            aproxs.append(aprox)
-            names.append(f'Aprox Minimize BFGS')
-            erros.append(erro)
+        params, erro = Gradient_Descent_RMSprop(x, fx, entrada, 1, max_iter=max_iter)
+        aprox = Gerar_TSK(x, entrada, params, 1)
+        rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()
+        file.write(f'Aprox GD RMSprop 1 ordem: {rmse:.5f}\n')
+        aproxs.append(aprox)
+        names.append(f'Aprox GD RMSprop')
+        erros.append(erro)
 
-            Gerar_Graficos(x, fx, entrada, aproxs, names, erros, f'imgs/{ordem}-ordem/' + filename + '.png')
+        aprox, erro = Gerar_Resultado_Aproximado(x, fx, entrada, 'BFGS', 1, max_iter=max_iter)
+        rmse = (np.sqrt(np.square(np.array(aprox) - np.array(fx)))).mean()
+        file.write(f'Aprox Minimize BFGS 1 ordem: {rmse:.5f}\n')
+        aproxs.append(aprox)
+        names.append(f'Aprox Minimize BFGS')
+        erros.append(erro)
+
+        Gerar_Graficos(x, fx, entrada, aproxs, names, erros, f'imgs/{1}-1/' + filename + '.png')
+        
         file.write('\n')
 file.close()
 
